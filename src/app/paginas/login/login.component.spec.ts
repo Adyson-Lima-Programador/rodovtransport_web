@@ -30,10 +30,15 @@ describe('LoginComponent', () => {
     expect(card.componentInstance).toBeTruthy();
   });
 
-  it('existe texto login em mat-card', () => {
+  it('existe texto Login em mat-card-title', () => {
     fixture.detectChanges();
-    const card = fixture.debugElement.query(By.css('mat-card'));
+    const card = fixture.debugElement.query(By.css('mat-card-title'));
     expect(card.nativeElement.textContent).toContain('Login');
   });
+
+  it('existe a classe css example-card em mat-card', () => {
+    const card = fixture.debugElement.query(By.css('mat-card.example-card'));
+    expect(card).toBeTruthy();
+    });
 
 });
