@@ -1,5 +1,4 @@
-# Frontend Angular da aplicação rodovtransport integrado a API REST 
-<a href ="https://github.com/Adyson-Lima-Programador/rodovtransport_api">rodovtransport_api</a>. 
+# Frontend Angular da aplicação rodovtransport integrado a API REST <a href ="https://github.com/Adyson-Lima-Programador/rodovtransport_api">rodovtransport_api</a>
 
 # Autor
 
