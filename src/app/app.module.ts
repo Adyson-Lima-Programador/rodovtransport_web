@@ -19,6 +19,7 @@ import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-clien
 import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empresa.component';
 import { HeaderComponent } from './paginas/componentes/header/header.component';
 import { FooterComponent } from './paginas/componentes/footer/footer.component';
+import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FooterComponent } from './paginas/componentes/footer/footer.component';
     PacotesClienteComponent,
     PacotesEmpresaComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
