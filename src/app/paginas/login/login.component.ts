@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.exibeSnack("dados inválidos", "notif-error");
       this.limpaFormulario();
     }
-    else {
+    else { 
 
       if (this.formulario.value.email === "user@user.com" && this.formulario.value.password === "123") {
         this.router.navigate(['pacotes-cliente']);
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
         this.router.navigate(['pacotes-empresa']);
       }
-      else {
+      else { // Se form estiver válido, mas o email e senha não existirem...
         this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
       }
 
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
       panelClass: classe_css,
-      duration: 3000
+      duration: 5000
     });
   }
 

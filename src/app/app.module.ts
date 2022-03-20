@@ -17,6 +17,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './paginas/login/login.component';
 import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-cliente.component';
 import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empresa.component';
+import { HeaderComponent } from './paginas/componentes/header/header.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empre
     AppComponent,
     LoginComponent,
     PacotesClienteComponent,
-    PacotesEmpresaComponent
+    PacotesEmpresaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-pacotes-cliente',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacotesClienteComponent implements OnInit {
 
-  constructor() { }
+  // Configura posições da snackbar
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+
+    this.exibeSnack("Bem vindo usuário !","notif-success")
+
+  }
+
+  exibeSnack(mensagem: string, classe_css: string): void {
+    this._snackBar.open(mensagem, 'X', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      panelClass: classe_css,
+      duration: 5000
+    });
   }
 
 }
