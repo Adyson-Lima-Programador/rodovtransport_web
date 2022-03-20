@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
@@ -7,8 +7,6 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,6 +14,7 @@ import {
 })
 export class LoginComponent implements OnInit {
 
+  // Configura ReactiveForms
   public formulario: FormGroup = new FormGroup({
     'email': new FormControl(null, [Validators.required, Validators.email]),
     'password': new FormControl(null, [Validators.required, Validators.minLength(3)])
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar, private rota: Router) {
+  constructor(private _snackBar: MatSnackBar, private router: Router) {
 
   }
 
@@ -33,32 +32,25 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(): boolean {
+  login(): void {
 
     if (this.formulario.status === "INVALID") {
       this.exibeSnack("dados inválidos", "notif-error");
       this.limpaFormulario();
-      return false;
-
     }
     else {
 
       if (this.formulario.value.email === "user@user.com" && this.formulario.value.password === "123") {
-        this.exibeSnack("usuário logado", "notif-success");
-        this.limpaFormulario();
-        //this.rota.navigate(['/pacotes_cliente']);
-        return true;
+        this.router.navigate(['pacotes-cliente']);
       }
-      else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
-        this.exibeSnack("administrador logado", "notif-success");
-        this.limpaFormulario();
-        // this.rota.navigate(['/pacotes']);
-        return true;
-      }
-      else {
-        this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
-        return false;
-      }
+      // else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
+      //   this.exibeSnack("administrador logado", "notif-success");
+      //   this.limpaFormulario();
+      //   // this.rota.navigate(['/pacotes']);
+      // }
+      // else {
+      //   this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
+      // }
 
     }
 

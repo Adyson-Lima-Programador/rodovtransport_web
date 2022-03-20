@@ -15,12 +15,14 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 
 import { LoginComponent } from './paginas/login/login.component';
+import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-cliente.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    PacotesClienteComponent
   ],
   imports: [
     BrowserModule,
