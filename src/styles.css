@@ -11,6 +11,15 @@ body {
 }
 
 .notif-success {
-    color: red;
+    color: #76FF03;
     background-color: #424242;
+    border-style: solid;
+    border-color: #76FF03;
+}
+
+.notif-error {
+    color: #D32F2F;
+    background-color: #424242;
+    border-style: solid;
+    border-color: #D32F2F;
 }
