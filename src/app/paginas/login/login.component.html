@@ -4,20 +4,20 @@
             <mat-card-title>Login</mat-card-title>
         </mat-card-header>
         <div fxLayout="column" fxLayoutAlign="space-evenly center">
-            <img mat-card-image class="img" src="https://raw.githubusercontent.com/Adyson-Lima-Programador/rodovtransport_web/main/imagens/rodovtransport(1).png">
+            <img mat-card-image class="img" src="https://raw.githubusercontent.com/Adyson-Lima-Programador/rodovtransport_web/main/src/app/imagens/rodovtransport_banner.png">
         </div>
         <mat-card-content>
             <form class="example-form">
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="seu_email@email.com">
+                    <input matInput name="email" id="email" placeholder="seu_email@email.com" type="email" [formControl]="email">
                 </mat-form-field>
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Senha</mat-label>
-                    <input matInput type="password">
+                    <input matInput name="password" id="password" type="password" [formControl]="password">
                 </mat-form-field>
                 <div fxLayout="column" fxLayoutAlign="center stretch">
-                    <button mat-raised-button color="primary">Login</button>
+                    <button mat-raised-button color="primary" (click)="login(this.email,this.password)">Login</button>
                 </div>
             </form>
         </mat-card-content>

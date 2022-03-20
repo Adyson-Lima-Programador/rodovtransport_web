@@ -10,6 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+
 
 import { LoginComponent } from './paginas/login/login.component';
 
@@ -27,6 +29,8 @@ import { LoginComponent } from './paginas/login/login.component';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,9 +9,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [LoginComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -39,6 +39,11 @@ describe('LoginComponent', () => {
   it('existe a classe css example-card em mat-card', () => {
     const card = fixture.debugElement.query(By.css('mat-card.example-card'));
     expect(card).toBeTruthy();
-    });
+  });
+
+  it('acessa metodo login', () => {
+    expect(component.login).toBeTruthy();
+
+  });
 
 });
