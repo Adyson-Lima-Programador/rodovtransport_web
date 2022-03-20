@@ -43,14 +43,12 @@ export class LoginComponent implements OnInit {
       if (this.formulario.value.email === "user@user.com" && this.formulario.value.password === "123") {
         this.router.navigate(['pacotes-cliente']);
       }
-      // else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
-      //   this.exibeSnack("administrador logado", "notif-success");
-      //   this.limpaFormulario();
-      //   // this.rota.navigate(['/pacotes']);
-      // }
-      // else {
-      //   this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
-      // }
+      else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
+        this.router.navigate(['pacotes-empresa']);
+      }
+      else {
+        this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
+      }
 
     }
 
