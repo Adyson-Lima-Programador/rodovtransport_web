@@ -18,6 +18,7 @@ import { LoginComponent } from './paginas/login/login.component';
 import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-cliente.component';
 import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empresa.component';
 import { HeaderComponent } from './paginas/componentes/header/header.component';
+import { FooterComponent } from './paginas/componentes/footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HeaderComponent } from './paginas/componentes/header/header.component';
     LoginComponent,
     PacotesClienteComponent,
     PacotesEmpresaComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
