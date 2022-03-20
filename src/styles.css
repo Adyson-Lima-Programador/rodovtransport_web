@@ -9,3 +9,8 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.notif-success {
+    color: red;
+    background-color: #424242;
+}

@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatCardModule} from '@angular/material/card'; 
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';  
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 import { LoginComponent } from './paginas/login/login.component';
@@ -28,9 +29,9 @@ import { LoginComponent } from './paginas/login/login.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
+    MatSnackBarModule,
     FlexLayoutModule,
-    ReactiveFormsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
