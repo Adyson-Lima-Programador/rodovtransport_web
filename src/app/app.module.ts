@@ -10,6 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatIconModule} from '@angular/material/icon'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list'; 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -44,6 +46,8 @@ import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.componen
     MatSnackBarModule,
     MatToolbarModule,
     MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     FlexLayoutModule,
     ReactiveFormsModule
   ],
