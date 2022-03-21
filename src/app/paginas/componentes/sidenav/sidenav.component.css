@@ -1,11 +1,13 @@
 .sidenav {
-    background-color: #ffbd59;
+    margin: 0.5% 0 0.5% 0;
+    background-color: rgba(0, 0, 0, 0.2);
     width: 15%;
-    height: 75%;
+    height: 76%;
 }
 
 .sidenav a {
-    color: #424242;
+    color: #ffbd59;
+    background-color: rgba(255, 189, 89, 0.3);
 }
 
 .sidenav i {
