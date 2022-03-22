@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -14,6 +15,7 @@ import { PacotesService } from './pacotes.service';
 })
 export class PacotesClienteComponent implements OnInit {
 
+  public paginaAtual: number = 1;
   pacotes: Pacote[] = [];
   pacotesLista: Pacote[] = [];
 
@@ -24,7 +26,8 @@ export class PacotesClienteComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar, private pacoteService: PacotesService) { }
+  constructor(private _snackBar: MatSnackBar, private pacoteService: PacotesService) {
+  }
 
   ngOnInit(): void {
 
@@ -34,9 +37,29 @@ export class PacotesClienteComponent implements OnInit {
   }
 
   listarPacotes(): any {
-    this.pacoteService.read().subscribe(pacotes => {
+    this.pacoteService.buscarTodos().subscribe(pacotes => {
       this.pacotes = pacotes;
     });
+  }
+
+  voltar(): void {
+    if (this.paginaAtual > 1) {
+      this.paginaAtual -= 1;
+      this.pacoteService.buscarProximaPagina(this.paginaAtual).subscribe(pacotes => {
+        console.log(`${this.paginaAtual}`);
+        this.pacotes = pacotes;
+      });
+    }
+  }
+
+  proximo(): void {
+    if (this.paginaAtual < 15) {
+      this.paginaAtual += 1;
+      this.pacoteService.buscarProxinaAnterior(this.paginaAtual).subscribe(pacotes => {
+        console.log(`${this.paginaAtual}`);
+        this.pacotes = pacotes;
+      });
+    }
   }
 
   exibeSnack(mensagem: string, classe_css: string): void {

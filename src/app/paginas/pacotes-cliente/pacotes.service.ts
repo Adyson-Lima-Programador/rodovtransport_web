@@ -8,11 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class PacotesService {
 
-  baseUrl = "https://rodovtransport.herokuapp.com/api/v2/packages";
-
+  baseUrl = "http://localhost:3000/api/v2/packages";
+  
   constructor(private http: HttpClient) { }
 
-  read(): Observable<Pacote[]> {
+  buscarTodos(): Observable<Pacote[]> {
     return this.http.get<Pacote[]>(this.baseUrl);
+  }
+
+  buscarProximaPagina(paginaAtual: number): Observable<Pacote[]> {
+    return this.http.get<Pacote[]>(this.baseUrl + `?page=${paginaAtual}`);
+  }
+
+  buscarProxinaAnterior(paginaAtual: number): Observable<Pacote[]> {
+    return this.http.get<Pacote[]>(this.baseUrl + `?page=${paginaAtual}`);
   }
 }
