@@ -13,7 +13,7 @@ import {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  
   // Configura ReactiveForms
   public formulario: FormGroup = new FormGroup({
     'email': new FormControl(null, [Validators.required, Validators.email]),

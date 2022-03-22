@@ -26,6 +26,7 @@ import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empre
 import { HeaderComponent } from './paginas/componentes/header/header.component';
 import { FooterComponent } from './paginas/componentes/footer/footer.component';
 import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.component';
+import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/sidenav-admin.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.componen
     PacotesEmpresaComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    SidenavAdminComponent
   ],
   imports: [
     BrowserModule,
