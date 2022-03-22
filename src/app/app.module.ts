@@ -14,8 +14,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -53,7 +51,6 @@ import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.componen
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,

@@ -10,7 +10,7 @@ Meu LinkedIn: https://www.linkedin.com/in/adyson-lima-programador/
 
 https://endereço em breve.com
 
-Esta aplicação é desenvolvida em **Angular**, usando **TDD**, e **Angular-Material**. Este frontend é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
+Esta aplicação é desenvolvida em **Angular**, usando **Testes**, e **Angular-Material**. Este frontend é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
 
 ## Layout web
 <img src="" alt="imagem da aplicação"/>
@@ -38,7 +38,7 @@ git clone git@github.com:Adyson-Lima-Programador/rodovtransport_web.git
 # entrar na pasta rodovtransport_web
 cd rodovtransport_web
 
-# instalar dependencias com bundle
+# instalar dependencias com npm
 npm install
 
 # executar o projeto

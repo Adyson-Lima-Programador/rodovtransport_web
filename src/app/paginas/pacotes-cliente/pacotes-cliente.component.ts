@@ -5,8 +5,8 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-import { Pacote } from './pacotes.model';
-import { PacotesService } from './pacotes.service';
+import { Pacote } from '../servicos-packages/pacotes.model';
+import { PacotesService } from '../servicos-packages/pacotes.service';
 
 @Component({
   selector: 'app-pacotes-cliente',
