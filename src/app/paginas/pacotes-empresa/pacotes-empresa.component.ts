@@ -5,6 +5,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { MatTableDataSource } from '@angular/material/table';
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
 
@@ -17,7 +18,7 @@ export class PacotesEmpresaComponent implements OnInit {
 
   public paginaAtual: number = 1;
   pacotes: Pacote[] = [];
-  pacotesLista: Pacote[] = [];
+  listaPacotes: any;
 
   // Determina quais colunas serão vistas em cada linha da tabela
   displayedColumns: string[] = ['id', 'content', 'created_at', 'status', 'acoes'];
@@ -30,7 +31,7 @@ export class PacotesEmpresaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.exibeSnack("Bem vindo administrador!","notif-success")
+    this.exibeSnack("Bem vindo administrador!", "notif-success")
     this.listarPacotes();
 
   }
@@ -38,6 +39,7 @@ export class PacotesEmpresaComponent implements OnInit {
   listarPacotes(): any {
     this.pacoteService.buscarTodos().subscribe(pacotes => {
       this.pacotes = pacotes;
+      this.listaPacotes = new MatTableDataSource(this.pacotes);
     });
   }
 
@@ -45,8 +47,8 @@ export class PacotesEmpresaComponent implements OnInit {
     if (this.paginaAtual > 1) {
       this.paginaAtual -= 1;
       this.pacoteService.buscarProximaPagina(this.paginaAtual).subscribe(pacotes => {
-        console.log(`${this.paginaAtual}`);
         this.pacotes = pacotes;
+        this.listaPacotes = new MatTableDataSource(this.pacotes);
       });
     }
   }
@@ -55,8 +57,8 @@ export class PacotesEmpresaComponent implements OnInit {
     if (this.paginaAtual < 15) {
       this.paginaAtual += 1;
       this.pacoteService.buscarProxinaAnterior(this.paginaAtual).subscribe(pacotes => {
-        console.log(`${this.paginaAtual}`);
         this.pacotes = pacotes;
+        this.listaPacotes = new MatTableDataSource(this.pacotes);
       });
     }
   }
@@ -68,6 +70,11 @@ export class PacotesEmpresaComponent implements OnInit {
       panelClass: classe_css,
       duration: 5000
     });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.listaPacotes.filter = filterValue.trim().toLowerCase();
   }
 
 }

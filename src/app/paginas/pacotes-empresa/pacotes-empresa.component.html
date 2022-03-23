@@ -1,16 +1,25 @@
 <app-header></app-header>
 <app-sidenav-admin></app-sidenav-admin>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" class="botoes">
-    <button mat-raised-button class="mat-elevation-z9" (click)="voltar()" color="primary">
+<div fxLayout="row" fxLayoutAlign="start center" class="controles">
+
+    <button mat-raised-button class="mat-elevation-z9" (click)="proximo()" color="primary">
+        novo
+    </button>
+    <mat-form-field appearance="standard" class="pesquisa">
+        <mat-label>Pesquisar pacote</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="algum dado  do pacote" #input>
+    </mat-form-field>
+
+    <button mat-raised-button class="mat-elevation-z9" (click)="voltar()" color="accent">
             voltar
         </button>
-    <button mat-raised-button class="mat-elevation-z9" (click)="proximo()" color="primary">
+    <button mat-raised-button class="mat-elevation-z9" (click)="proximo()" color="accent">
             próximo
         </button>
 </div>
 
-<table mat-table [dataSource]="pacotes" class="mat-elevation-z1">
+<table mat-table [dataSource]="listaPacotes" class="mat-elevation-z1 table">
 
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Pedido</th>
