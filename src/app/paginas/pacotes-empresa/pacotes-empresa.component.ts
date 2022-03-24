@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {
   MatSnackBar,
@@ -6,6 +7,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
+
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
 
@@ -27,7 +29,9 @@ export class PacotesEmpresaComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar, private pacoteService: PacotesService) { }
+  constructor(private _snackBar: MatSnackBar,
+    private pacoteService: PacotesService,
+     private router: Router) { }
 
   ngOnInit(): void {
 
@@ -77,4 +81,10 @@ export class PacotesEmpresaComponent implements OnInit {
     this.listaPacotes.filter = filterValue.trim().toLowerCase();
   }
 
+  criarPacotes():void{
+    this.router.navigate(['pacotes-create']);
+  }
+
+
 }
+

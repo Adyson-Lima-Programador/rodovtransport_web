@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -27,7 +28,8 @@ import { HeaderComponent } from './paginas/componentes/header/header.component';
 import { FooterComponent } from './paginas/componentes/footer/footer.component';
 import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.component';
 import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/sidenav-admin.component';
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/siden
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
-    SidenavAdminComponent
+    SidenavAdminComponent,
+    PacotesCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +56,11 @@ import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/siden
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatFormFieldModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
