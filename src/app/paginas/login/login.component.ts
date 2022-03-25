@@ -6,6 +6,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -41,9 +42,11 @@ export class LoginComponent implements OnInit {
     else { 
 
       if (this.formulario.value.email === "user@user.com" && this.formulario.value.password === "123") {
+        environment.USUARIO_LOGADO = 'user';
         this.router.navigate(['pacotes-cliente']);
       }
       else if (this.formulario.value.email === "admin@admin.com" && this.formulario.value.password === "123") {
+        environment.USUARIO_LOGADO = 'admin';
         this.router.navigate(['pacotes-empresa']);
       }
       else { // Se form estiver válido, mas o email e senha não existirem...

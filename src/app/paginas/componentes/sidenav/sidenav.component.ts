@@ -11,7 +11,7 @@ export class SidenavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(environment.titulo);
+  
   }
 
 }

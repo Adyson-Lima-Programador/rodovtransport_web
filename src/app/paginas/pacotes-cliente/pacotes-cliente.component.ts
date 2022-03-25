@@ -45,8 +45,7 @@ export class PacotesClienteComponent implements OnInit {
   voltar(): void {
     if (this.paginaAtual > 1) {
       this.paginaAtual -= 1;
-      this.pacoteService.buscarProximaPagina(this.paginaAtual).subscribe(pacotes => {
-        console.log(`${this.paginaAtual}`);
+      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
         this.pacotes = pacotes;
       });
     }
@@ -55,8 +54,7 @@ export class PacotesClienteComponent implements OnInit {
   proximo(): void {
     if (this.paginaAtual < 15) {
       this.paginaAtual += 1;
-      this.pacoteService.buscarProxinaAnterior(this.paginaAtual).subscribe(pacotes => {
-        console.log(`${this.paginaAtual}`);
+      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
         this.pacotes = pacotes;
       });
     }

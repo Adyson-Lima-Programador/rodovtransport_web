@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  titulo: 'fteste de variável de ambiente'
+  USUARIO_LOGADO: '',
+  ACESSOS_AO_ADMIN: 0
 };
 
 /*

@@ -16,11 +16,16 @@ export class PacotesService {
     return this.http.get<Pacote[]>(this.baseUrl);
   }
 
-  buscarProximaPagina(paginaAtual: number): Observable<Pacote[]> {
+  navegarPagina(paginaAtual: number): Observable<Pacote[]> {
     return this.http.get<Pacote[]>(this.baseUrl + `?page=${paginaAtual}`);
   }
 
-  buscarProxinaAnterior(paginaAtual: number): Observable<Pacote[]> {
-    return this.http.get<Pacote[]>(this.baseUrl + `?page=${paginaAtual}`);
+  // buscarProxinaAnterior(paginaAtual: number): Observable<Pacote[]> {
+  //   return this.http.get<Pacote[]>(this.baseUrl + `?page=${paginaAtual}`);
+  // }
+
+  create(pacote: Pacote): Observable<Pacote> {
+    return this.http.post<Pacote>(this.baseUrl, pacote);
   }
+
 }

@@ -2,28 +2,29 @@
 <app-sidenav-admin></app-sidenav-admin>
 
 <div class="formulario">
-    <form>
-        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
-            <mat-label>Cliente</mat-label>
-            <input matInput placeholder="Nome do cliente">
-            <mat-icon matSuffix>person</mat-icon>
-        </mat-form-field>
+    <form [formGroup]="formulario" (ngSubmit)="createPacote()">
 
         <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
             <mat-label>Descrição</mat-label>
-            <input matInput placeholder="Descrição do pacote">
+            <input matInput placeholder="Descrição do pacote" formControlName="content">
             <mat-icon matSuffix>inventory</mat-icon>
         </mat-form-field>
 
         <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
             <mat-label>Status</mat-label>
-            <input matInput placeholder="Status do pacote">
+            <input matInput placeholder="Status do pacote" formControlName="status">
             <mat-icon matSuffix>local_shipping</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
+            <mat-label>Código do cliente</mat-label>
+            <input matInput placeholder="Código do cliente com até 3 números" formControlName="user_id">
+            <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
         <div fxLayout="row" fxLayoutAlign="end center">
             <button mat-raised-button color="primary">Salvar</button>
-            <button mat-raised-button color="warn">Cancelar</button>
+            <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
         </div>
 
     </form>

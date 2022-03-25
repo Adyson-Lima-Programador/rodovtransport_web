@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-pacotes-empresa',
@@ -31,12 +32,20 @@ export class PacotesEmpresaComponent implements OnInit {
 
   constructor(private _snackBar: MatSnackBar,
     private pacoteService: PacotesService,
-     private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
 
-    this.exibeSnack("Bem vindo administrador!", "notif-success")
-    this.listarPacotes();
+    if (environment.ACESSOS_AO_ADMIN === 0) {
+      this.exibeSnack("Bem vindo administrador!", "notif-success")
+      this.listarPacotes();
+      environment.ACESSOS_AO_ADMIN = 1;
+
+    } else {
+
+      this.listarPacotes();
+
+    }
 
   }
 
@@ -50,7 +59,7 @@ export class PacotesEmpresaComponent implements OnInit {
   voltar(): void {
     if (this.paginaAtual > 1) {
       this.paginaAtual -= 1;
-      this.pacoteService.buscarProximaPagina(this.paginaAtual).subscribe(pacotes => {
+      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
         this.pacotes = pacotes;
         this.listaPacotes = new MatTableDataSource(this.pacotes);
       });
@@ -60,7 +69,7 @@ export class PacotesEmpresaComponent implements OnInit {
   proximo(): void {
     if (this.paginaAtual < 15) {
       this.paginaAtual += 1;
-      this.pacoteService.buscarProxinaAnterior(this.paginaAtual).subscribe(pacotes => {
+      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
         this.pacotes = pacotes;
         this.listaPacotes = new MatTableDataSource(this.pacotes);
       });
@@ -81,7 +90,7 @@ export class PacotesEmpresaComponent implements OnInit {
     this.listaPacotes.filter = filterValue.trim().toLowerCase();
   }
 
-  criarPacotes():void{
+  criarPacotes(): void {
     this.router.navigate(['pacotes-create']);
   }
 
