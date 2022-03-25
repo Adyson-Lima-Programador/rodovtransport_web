@@ -30,6 +30,7 @@ import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.componen
 import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/sidenav-admin.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.component';
+import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.
     FooterComponent,
     SidenavComponent,
     SidenavAdminComponent,
-    PacotesCreateComponent
+    PacotesCreateComponent,
+    PacotesUpdateComponent
   ],
   imports: [
     BrowserModule,
