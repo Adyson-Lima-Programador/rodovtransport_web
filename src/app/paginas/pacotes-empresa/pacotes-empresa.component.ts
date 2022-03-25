@@ -7,10 +7,16 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
 import { environment } from 'src/environments/environment';
+// import { PacotesDeleteComponent } from '../pacotes-delete/pacotes-delete.component';
+
+export interface DialogData {
+  id_elemento: number;
+}
 
 @Component({
   selector: 'app-pacotes-empresa',
@@ -18,6 +24,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./pacotes-empresa.component.css']
 })
 export class PacotesEmpresaComponent implements OnInit {
+
+  id_elemento: number = 0;
 
   public paginaAtual: number = 1;
   pacotes: Pacote[] = [];
@@ -32,7 +40,8 @@ export class PacotesEmpresaComponent implements OnInit {
 
   constructor(private _snackBar: MatSnackBar,
     private pacoteService: PacotesService,
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -93,6 +102,16 @@ export class PacotesEmpresaComponent implements OnInit {
   criarPacotes(): void {
     this.router.navigate(['pacotes-create']);
   }
+
+  // openDialog():void{
+  //   const dialogRef = this.dialog.open(PacotesDeleteComponent,{
+  //     data: {id_elemento: this.id_elemento}
+  //   });
+    
+  //   dialogRef.afterClosed().subscribe( () => {
+  //     this.exibeSnack("Pacote excluido com sucesso!", "notif-success")
+  //   });
+  // }
 
 
 }

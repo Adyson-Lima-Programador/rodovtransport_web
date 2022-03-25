@@ -34,4 +34,10 @@ export class PacotesService {
     return this.http.put<Pacote>(url, pacote);
   }
 
+  delete(pacote: Pacote): Observable<Pacote> {
+    const url = `${this.baseUrl}/${pacote.id}`;
+    return this.http.delete<Pacote>(url);
+  }
+    
+
 }

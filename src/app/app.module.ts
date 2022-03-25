@@ -5,20 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input'; 
-import {MatCardModule} from '@angular/material/card'; 
-import {MatButtonModule} from '@angular/material/button';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatIconModule} from '@angular/material/icon'; 
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list'; 
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { LoginComponent } from './paginas/login/login.component';
@@ -31,6 +32,7 @@ import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/siden
 import { LayoutModule } from '@angular/cdk/layout';
 import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.component';
 import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.component';
+import { PacotesDeleteComponent } from './paginas/pacotes-delete/pacotes-delete.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.
     SidenavComponent,
     SidenavAdminComponent,
     PacotesCreateComponent,
-    PacotesUpdateComponent
+    PacotesUpdateComponent,
+    PacotesDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
+    MatDialogModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
