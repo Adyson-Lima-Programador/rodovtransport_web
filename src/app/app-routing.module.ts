@@ -6,7 +6,9 @@ import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.
 import { PacotesDeleteComponent } from './paginas/pacotes-delete/pacotes-delete.component';
 import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empresa.component';
 import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.component';
+import { UsuariosCreateComponent } from './paginas/usuarios-create/usuarios-create.component';
 import { UsuariosEmpresaComponent } from './paginas/usuarios-empresa/usuarios-empresa.component';
+import { UsuariosUpdateComponent } from './paginas/usuarios-update/usuarios-update.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: "pacotes-create", component: PacotesCreateComponent },
   { path: "pacotes-empresa/pacotes-update/:id", component: PacotesUpdateComponent },
   { path: "pacotes-empresa/pacotes-delete/:id", component: PacotesDeleteComponent },
-  { path: "usuarios-empresa", component: UsuariosEmpresaComponent }
+  { path: "usuarios-empresa", component: UsuariosEmpresaComponent },
+  { path: "usuarios-create", component: UsuariosCreateComponent },
+  { path: "usuarios-empresa/usuarios-update/:id", component: UsuariosUpdateComponent }
 ];
 
 @NgModule({

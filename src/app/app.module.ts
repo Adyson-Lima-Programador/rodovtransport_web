@@ -34,6 +34,8 @@ import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.
 import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.component';
 import { PacotesDeleteComponent } from './paginas/pacotes-delete/pacotes-delete.component';
 import { UsuariosEmpresaComponent } from './paginas/usuarios-empresa/usuarios-empresa.component';
+import { UsuariosCreateComponent } from './paginas/usuarios-create/usuarios-create.component';
+import { UsuariosUpdateComponent } from './paginas/usuarios-update/usuarios-update.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { UsuariosEmpresaComponent } from './paginas/usuarios-empresa/usuarios-em
     PacotesUpdateComponent,
     PacotesDeleteComponent,
     UsuariosEmpresaComponent,
+    UsuariosCreateComponent,
+    UsuariosUpdateComponent,
   ],
   imports: [
     BrowserModule,

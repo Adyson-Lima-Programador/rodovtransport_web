@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-sidenav-admin></app-sidenav-admin>
+
+<div class="formulario">
+
+    <form [formGroup]="formulario" (ngSubmit)="createUsuario()">
+
+        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email do usuário" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome do usuário" formControlName="name">
+            <mat-icon matSuffix>badge</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput placeholder="Senha do usuário" formControlName="password">
+            <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="column" fxLayoutAlign="start stretch" appearance="outline">
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="Tipo de usuário" formControlName="category">
+            <mat-icon matSuffix>format_list_bulleted</mat-icon>
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <button mat-raised-button color="primary">Salvar</button>
+            <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+        </div>
+
+    </form>
+</div>
+
+<app-footer></app-footer>
