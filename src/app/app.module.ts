@@ -33,6 +33,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.component';
 import { PacotesUpdateComponent } from './paginas/pacotes-update/pacotes-update.component';
 import { PacotesDeleteComponent } from './paginas/pacotes-delete/pacotes-delete.component';
+import { UsuariosEmpresaComponent } from './paginas/usuarios-empresa/usuarios-empresa.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PacotesDeleteComponent } from './paginas/pacotes-delete/pacotes-delete.
     PacotesCreateComponent,
     PacotesUpdateComponent,
     PacotesDeleteComponent,
+    UsuariosEmpresaComponent,
   ],
   imports: [
     BrowserModule,
