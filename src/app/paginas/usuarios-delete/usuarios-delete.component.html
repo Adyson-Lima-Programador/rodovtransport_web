@@ -1,0 +1,19 @@
+<app-header></app-header>
+<app-sidenav-admin></app-sidenav-admin>
+
+<div class="informacao">
+    <mat-card>
+        <mat-card-title class="titulo">Atenção!</mat-card-title>
+        <mat-card-subtitle class="mensagem">Esta exclusão não pode ser desfeita, deseja realmente excluir o usuário?</mat-card-subtitle>
+        <p>Código do usuário: <b>{{usuario.id}}</b></p>
+        <p>Email do usuário: <b>{{usuario.email}}</b></p>
+        <p>Nome do usuário: <b>{{usuario.name}}</b></p>
+        <p>Tipo de usuário: <b>{{usuario.category}}</b></p>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="basic" (click)="cancelar()">Cancelar</button>
+            <button mat-raised-button color="warn" (click)="deleteUsuario()">Deletar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<app-footer></app-footer>
