@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AutenticacaoGuard } from './paginas/autenticacao.guard';
 import { LoginComponent } from './paginas/login/login.component';
 import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-cliente.component';
 import { PacotesCreateComponent } from './paginas/pacotes-create/pacotes-create.component';
@@ -13,15 +14,15 @@ import { UsuariosUpdateComponent } from './paginas/usuarios-update/usuarios-upda
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  { path: "pacotes-cliente", component: PacotesClienteComponent },
-  { path: "pacotes-empresa", component: PacotesEmpresaComponent },
-  { path: "pacotes-create", component: PacotesCreateComponent },
-  { path: "pacotes-empresa/pacotes-update/:id", component: PacotesUpdateComponent },
-  { path: "pacotes-empresa/pacotes-delete/:id", component: PacotesDeleteComponent },
-  { path: "usuarios-empresa", component: UsuariosEmpresaComponent },
-  { path: "usuarios-create", component: UsuariosCreateComponent },
-  { path: "usuarios-empresa/usuarios-update/:id", component: UsuariosUpdateComponent },
-  { path: "usuarios-empresa/usuarios-delete/:id", component: UsuariosDeleteComponent }
+  { path: "pacotes-cliente", component: PacotesClienteComponent, canActivate:[AutenticacaoGuard] },
+  { path: "pacotes-empresa", component: PacotesEmpresaComponent, canActivate:[AutenticacaoGuard] },
+  { path: "pacotes-create", component: PacotesCreateComponent, canActivate:[AutenticacaoGuard] },
+  { path: "pacotes-empresa/pacotes-update/:id", component: PacotesUpdateComponent, canActivate:[AutenticacaoGuard] },
+  { path: "pacotes-empresa/pacotes-delete/:id", component: PacotesDeleteComponent, canActivate:[AutenticacaoGuard] },
+  { path: "usuarios-empresa", component: UsuariosEmpresaComponent, canActivate:[AutenticacaoGuard] },
+  { path: "usuarios-create", component: UsuariosCreateComponent, canActivate:[AutenticacaoGuard] },
+  { path: "usuarios-empresa/usuarios-update/:id", component: UsuariosUpdateComponent, canActivate:[AutenticacaoGuard] },
+  { path: "usuarios-empresa/usuarios-delete/:id", component: UsuariosDeleteComponent, canActivate:[AutenticacaoGuard] }
 ];
 
 @NgModule({
