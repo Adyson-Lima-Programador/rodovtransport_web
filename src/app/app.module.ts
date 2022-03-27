@@ -25,7 +25,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './paginas/login/login.component';
 import { PacotesClienteComponent } from './paginas/pacotes-cliente/pacotes-cliente.component';
 import { PacotesEmpresaComponent } from './paginas/pacotes-empresa/pacotes-empresa.component';
-import { HeaderComponent } from './paginas/componentes/header/header.component';
 import { FooterComponent } from './paginas/componentes/footer/footer.component';
 import { SidenavComponent } from './paginas/componentes/sidenav/sidenav.component';
 import { SidenavAdminComponent } from './paginas/componentes/sidenav-admin/sidenav-admin.component';
@@ -44,7 +43,6 @@ import { UsuariosDeleteComponent } from './paginas/usuarios-delete/usuarios-dele
     LoginComponent,
     PacotesClienteComponent,
     PacotesEmpresaComponent,
-    HeaderComponent,
     FooterComponent,
     SidenavComponent,
     SidenavAdminComponent,

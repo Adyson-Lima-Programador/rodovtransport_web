@@ -1,5 +1,17 @@
+<mat-toolbar class="header mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    <span>
+        <a class="logo" routerLink="/">
+          RODOVTRANSPORT
+        </a>
+      </span>
+</mat-toolbar>
+
 <mat-drawer-container>
-    <mat-sidenav class="sidenav mat-elevation-z10" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <mat-sidenav #sidenav="matSidenav" class="sidenav mat-elevation-z10" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/"><i class="material-icons">logout</i> Sair</a>
         </mat-nav-list>
