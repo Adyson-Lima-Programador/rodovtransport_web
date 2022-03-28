@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class AutenticacaoService {
   }
 
   loginJWT(email: string, password: string){
-    let r = this.http.post(this.baseUrl, {email: email, password: password})
+    let resposta_rails = this.http.post(this.baseUrl, {email: email, password: password})
     .subscribe(resposta => {
       let token_bruto = JSON.stringify(resposta);
       let token_limpo = JSON.stringify(resposta).substring(10,token_bruto.length-2);
@@ -37,7 +37,7 @@ export class AutenticacaoService {
       console.log(`token_limpo: ${token_limpo}`);
     });
     
-    return r;
+    return resposta_rails;
   }
 
 }
