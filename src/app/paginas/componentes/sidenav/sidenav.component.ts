@@ -1,6 +1,8 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +14,7 @@ export class SidenavComponent implements AfterViewInit {
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver) { }
+  constructor(private router: Router, private observer: BreakpointObserver) { }
 
   ngOnInit(): void {
 
@@ -30,6 +32,12 @@ export class SidenavComponent implements AfterViewInit {
       }
     });
     
+  }
+
+  sair(): void {
+    environment.ACESSOS_AO_ADMIN = 0;
+    environment.USUARIO_LOGADO = '';
+    this.router.navigate(['/']);
   }
 
 }

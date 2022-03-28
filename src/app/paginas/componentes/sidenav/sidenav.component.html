@@ -13,7 +13,7 @@
 <mat-drawer-container>
     <mat-sidenav #sidenav="matSidenav" class="sidenav mat-elevation-z10" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/"><i class="material-icons">logout</i> Sair</a>
+            <a mat-list-item (click)="sair()"><i class="material-icons">logout</i> Sair</a>
         </mat-nav-list>
     </mat-sidenav>
 </mat-drawer-container>
