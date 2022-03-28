@@ -12,14 +12,8 @@ https://endereço em breve.com
 
 Esta aplicação é desenvolvida em **Angular**, usando **Testes**, e **Angular-Material**. Este frontend é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
 
-# Layout web
-## Tela de login
-
-<img src="https://github.com/Adyson-Lima-Programador/rodovtransport_web/blob/main/src/app/imagens/tela_login.png" alt="tela_login"/>
-
-## Tela de listagem de pacotes dos clientes
-
-<img src="https://github.com/Adyson-Lima-Programador/rodovtransport_web/blob/main/src/app/imagens/tela_listagem_pacotes_cliente.png" alt="listagem_pacotes"/>
+# Layout web Angular
+![](https://github.com/Adyson-Lima-Programador/rodovtransport_web/blob/main/src/app/imagens/app_web.gif)
 
 # Tecnologias utilizadas
 
