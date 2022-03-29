@@ -46,7 +46,7 @@ export class UsuariosDeleteComponent implements OnInit {
   deleteUsuario(): void {
 
     this.usuariosService.delete(this.usuario).subscribe(() => {
-      this.exibeSnack("Pacote excluído com sucesso!", "notif-success");
+      this.exibeSnack("Usuário excluído com sucesso!", "notif-success");
     });
 
   }

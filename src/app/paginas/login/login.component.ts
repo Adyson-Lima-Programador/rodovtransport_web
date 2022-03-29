@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-import { environment } from 'src/environments/environment';
 import { AutenticacaoService } from '../servicos-autenticacao/autenticacao.service';
 
 @Component({
@@ -15,7 +13,7 @@ import { AutenticacaoService } from '../servicos-autenticacao/autenticacao.servi
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   // Configura ReactiveForms
   public formulario: FormGroup = new FormGroup({
     'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -27,9 +25,9 @@ export class LoginComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   constructor(
+
     private _snackBar: MatSnackBar,
-     private router: Router,
-      private autenticacaoService: AutenticacaoService) {
+    private autenticacaoService: AutenticacaoService) {
 
   }
 
@@ -37,24 +35,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(): void {
+  login() {
 
     if (this.formulario.status === "INVALID") {
       this.exibeSnack("dados inválidos", "notif-error");
       this.limpaFormulario();
     }
-    else { 
-      
-      if (this.autenticacaoService.autenticar(this.formulario.value.email,this.formulario.value.password) && environment.USUARIO_LOGADO === "user") {
-        this.router.navigate(['pacotes-cliente']);
-      }
-      else if (this.autenticacaoService.autenticar(this.formulario.value.email,this.formulario.value.password) && environment.USUARIO_LOGADO === "admin") {
-        this.router.navigate(['pacotes-empresa']);
-      }
-      else { // Se form estiver válido, mas o email e senha não existirem...
-        this.exibeSnack('Email ou Senha incorreto!', 'notif-error');
-      }
-
+    else {
+      this.autenticacaoService.loginJWT(this.formulario.value.email, this.formulario.value.password)
     }
 
   }

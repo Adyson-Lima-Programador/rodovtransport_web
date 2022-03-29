@@ -37,6 +37,7 @@ export class SidenavComponent implements AfterViewInit {
   sair(): void {
     environment.ACESSOS_AO_ADMIN = 0;
     environment.USUARIO_LOGADO = '';
+    window.localStorage.clear;
     this.router.navigate(['/']);
   }
 
