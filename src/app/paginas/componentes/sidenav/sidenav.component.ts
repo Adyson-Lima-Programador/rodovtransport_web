@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -14,7 +14,8 @@ export class SidenavComponent implements AfterViewInit {
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
-  constructor(private router: Router, private observer: BreakpointObserver) { }
+  constructor(private router: Router, private observer: BreakpointObserver,
+    private cdref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
 
@@ -31,6 +32,7 @@ export class SidenavComponent implements AfterViewInit {
         this.sidenav.open();
       }
     });
+    this.cdref.detectChanges();
     
   }
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuarios.model';
 import { Observable } from 'rxjs';
+import { Pacote } from '../servicos-packages/pacotes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,11 @@ export class UsuariosService {
   readById(id: string): Observable<Usuario> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Usuario>(url);
+  }
+
+  readByEmail(email: string): Observable<Pacote[]> {
+    const url = `${this.baseUrl}/${email}`;
+    return this.http.get<Pacote[]>(url);
   }
 
   update(usuario: Usuario): Observable<Usuario> {

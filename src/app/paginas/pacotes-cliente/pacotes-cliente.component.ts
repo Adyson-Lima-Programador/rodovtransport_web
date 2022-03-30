@@ -7,6 +7,7 @@ import {
 } from '@angular/material/snack-bar';
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
+import { UsuariosService } from '../servicos-users/usuarios.service';
 
 @Component({
   selector: 'app-pacotes-cliente',
@@ -16,6 +17,7 @@ import { PacotesService } from '../servicos-packages/pacotes.service';
 export class PacotesClienteComponent implements OnInit {
 
   public paginaAtual: number = 1;
+  quantidadeElementosDaPagina: number = 0;
   pacotes: Pacote[] = [];
   pacotesLista: Pacote[] = [];
 
@@ -26,20 +28,27 @@ export class PacotesClienteComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar, private pacoteService: PacotesService) {
+  constructor(
+    private _snackBar: MatSnackBar,
+    private pacoteService: PacotesService,
+    private usuarioService: UsuariosService) {
   }
 
   ngOnInit(): void {
 
     this.exibeSnack("Bem vindo usuário !", "notif-success");
     this.listarPacotes();
-
+            
   }
 
   listarPacotes(): any {
-    this.pacoteService.buscarTodos().subscribe(pacotes => {
+    let email: any = '';
+    email = window.localStorage.getItem('email_usuario');
+    this.usuarioService.readByEmail(email).subscribe(pacotes => {
       this.pacotes = pacotes;
+      this.quantidadeElementosDaPagina = this.pacotes.length;
     });
+    console.log(this.quantidadeElementosDaPagina);
   }
 
   voltar(): void {
