@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   USUARIO_LOGADO: '',
-  ACESSOS_AO_ADMIN: 0
+  ACESSOS_AO_ADMIN: 0,
+  QTDE_ELEMENTOS: 0,
 };
 
 /*

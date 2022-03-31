@@ -5,6 +5,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 import { Pacote } from '../servicos-packages/pacotes.model';
 import { PacotesService } from '../servicos-packages/pacotes.service';
 import { UsuariosService } from '../servicos-users/usuarios.service';
@@ -17,7 +18,6 @@ import { UsuariosService } from '../servicos-users/usuarios.service';
 export class PacotesClienteComponent implements OnInit {
 
   public paginaAtual: number = 1;
-  quantidadeElementosDaPagina: number = 0;
   pacotes: Pacote[] = [];
   pacotesLista: Pacote[] = [];
 
@@ -35,39 +35,19 @@ export class PacotesClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
     this.exibeSnack("Bem vindo usuário !", "notif-success");
     this.listarPacotes();
-            
+    
   }
 
   listarPacotes(): any {
     let email: any = '';
     email = window.localStorage.getItem('email_usuario');
-    this.usuarioService.readByEmail(email).subscribe(pacotes => {
+    this.usuarioService.readByEmail(email).subscribe(pacotes => {      
       this.pacotes = pacotes;
-      this.quantidadeElementosDaPagina = this.pacotes.length;
     });
-    console.log(this.quantidadeElementosDaPagina);
-  }
-
-  voltar(): void {
-    if (this.paginaAtual > 1) {
-      this.paginaAtual -= 1;
-      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
-        this.pacotes = pacotes;
-      });
-    }
-  }
-
-  proximo(): void {
-    if (this.paginaAtual < 15) {
-      this.paginaAtual += 1;
-      this.pacoteService.navegarPagina(this.paginaAtual).subscribe(pacotes => {
-        this.pacotes = pacotes;
-      });
-    }
-  }
+  } 
 
   exibeSnack(mensagem: string, classe_css: string): void {
     this._snackBar.open(mensagem, 'X', {

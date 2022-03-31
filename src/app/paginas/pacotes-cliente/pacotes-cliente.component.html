@@ -1,18 +1,10 @@
 <app-sidenav></app-sidenav>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" class="botoes">
-    <button mat-raised-button class="mat-elevation-z9" (click)="voltar()" color="primary">
-            voltar
-        </button>
-    <button mat-raised-button class="mat-elevation-z9" (click)="proximo()" color="primary">
-            próximo
-        </button>
-</div>
 <div *ngIf="pacotes.length != 0 ">
     <table mat-table [dataSource]="pacotes" class="mat-elevation-z1">
 
         <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Pedido</th>
+            <th mat-header-cell *matHeaderCellDef>Pacote</th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 

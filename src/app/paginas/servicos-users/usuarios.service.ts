@@ -10,6 +10,7 @@ import { Pacote } from '../servicos-packages/pacotes.model';
 export class UsuariosService {
 
   baseUrl = "http://localhost:3000/api/v2/users";
+  baseUrl2 = "http://localhost:3000/api/v1/users";
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class UsuariosService {
   }
 
   readById(id: string): Observable<Usuario> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.baseUrl2}/${id}`;
     return this.http.get<Usuario>(url);
   }
 
