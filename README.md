@@ -4,13 +4,15 @@
 
 Adyson Lima
 
-Meu LinkedIn: https://www.linkedin.com/in/adyson-lima-programador/
+<a href="https://www.linkedin.com/in/adyson-lima-programador/">Meu LinkedIn</a>
 
 # Sobre o projeto
+<a href="https://rodovtransportweb.netlify.app/">Acesse aqui a aplicação publicada no Netlify</a>
+### Solicite os dados para logar na aplicação pelo meu linkedin
 
-https://endereço em breve.com
 
-Esta aplicação é desenvolvida em **Angular**, usando **Testes**, e **Angular-Material**. Este frontend é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
+
+Esta aplicação é desenvolvida em **Angular** e **Angular-Material**. Este frontend é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
 
 # Layout web Angular
 ![](https://github.com/Adyson-Lima-Programador/rodovtransport_web/blob/main/src/app/imagens/app_web.gif)
