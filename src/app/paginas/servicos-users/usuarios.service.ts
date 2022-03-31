@@ -9,8 +9,10 @@ import { Pacote } from '../servicos-packages/pacotes.model';
 })
 export class UsuariosService {
 
-  baseUrl = "http://localhost:3000/api/v2/users";
-  baseUrl2 = "http://localhost:3000/api/v1/users";
+  // baseUrl = "http://localhost:3000/api/v2/users";
+  baseUrl = "https://rodovtransport.herokuapp.com/api/v2/users";
+  // baseUrl2 = "http://localhost:3000/api/v1/users";
+  baseUrl2 = "https://rodovtransport.herokuapp.com/api/v1/users";
 
   constructor(private http: HttpClient) { }
 

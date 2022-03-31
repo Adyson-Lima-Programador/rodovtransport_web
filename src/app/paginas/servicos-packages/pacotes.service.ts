@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PacotesService {
 
-  baseUrl = "http://localhost:3000/api/v2/packages";
+  // baseUrl = "http://localhost:3000/api/v2/packages";
+  baseUrl = "https://rodovtransport.herokuapp.com/api/v2/packages";
 
   constructor(private http: HttpClient) { }
 

@@ -14,7 +14,8 @@ export class AutenticacaoService {
   categoria_usuario: string = '';
   usuarioAutenticado: boolean = false;
 
-  baseUrl = "http://localhost:3000/api/v1/auths";
+  // baseUrl = "http://localhost:3000/api/v1/auths";
+  baseUrl = "https://rodovtransport.herokuapp.com/api/v1/auths";
 
   constructor(private http: HttpClient, private router: Router) {
     this.categoria_usuario = '';
