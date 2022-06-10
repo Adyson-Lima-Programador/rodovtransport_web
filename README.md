@@ -8,7 +8,7 @@
 
 ### Esta aplicação é desenvolvida em **Angular** e **Angular-Material** e é parte de uma aplicação FullStack para gerenciamento de cargas para transportadoras rodoviárias.
 
-### <a href="https://rodovtransportweb.netlify.app/">Acesse aqui a aplicação publicada no Netlify e solicite os dados para logar na aplicação pelo meu linkedin</a>.
+### <a href="https://rodovtransportweb.netlify.app/">Acesse aqui </a>a aplicação publicada no Netlify e solicite os dados para logar na aplicação pelo meu linkedin.
 
 # Layout web Angular
 ![](https://github.com/Adyson-Lima-Programador/rodovtransport_web/blob/main/src/app/imagens/app_web.gif)
